@@ -43,7 +43,7 @@ Generá el siguiente contenido en formato JSON (solo el JSON, sin texto adiciona
 
     contenido = json.loads(respuesta_texto)
     contenido["titulo_noticia"] = noticia["titulo"]
-    contenido["url_fuente"] = noticia["url"]
+    contenido["fuente"] = noticia["fuente"]  # no mostrar fuente
     contenido["fuente"] = noticia["fuente"]
 
     return contenido
