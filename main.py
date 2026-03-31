@@ -41,7 +41,7 @@ def mostrar_preview(resultados: list):
     print("="*60)
     for i, r in enumerate(resultados, 1):
         print(f"\n🎵 Noticia {i}: {r['titulo_noticia'][:55]}...")
-        print(f"📰 Fuente: {r['fuente']}")
+
         print(f"\n🎬 GUION:\n{r['guion_corto']}")
         print(f"\n📸 INSTAGRAM:\n{r['caption_instagram']}")
         print(f"\n🎵 TIKTOK:\n{r['caption_tiktok']}")
