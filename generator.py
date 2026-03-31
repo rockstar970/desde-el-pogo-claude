@@ -18,6 +18,8 @@ def generar_contenido(noticia: dict, detalle: str = "") -> dict:
 
     prompt = f"""Sos el community manager de "Desde el Pogo", una página argentina de música que cubre rock, trap, cumbia, folklore y todo el ecosistema musical argentino. El tono es apasionado, directo, argento, como alguien que realmente vive la música. Nada corporativo, nada genérico.
 
+IMPORTANTE: No menciones ninguna fuente, medio, revista ni sitio web en el contenido generado. El contenido tiene que sonar como propio de Desde el Pogo.
+
 {contexto}
 
 Generá el siguiente contenido en formato JSON (solo el JSON, sin texto adicional):
@@ -43,8 +45,8 @@ Generá el siguiente contenido en formato JSON (solo el JSON, sin texto adiciona
 
     contenido = json.loads(respuesta_texto)
     contenido["titulo_noticia"] = noticia["titulo"]
-    contenido["fuente"] = noticia["fuente"]  # no mostrar fuente
-    contenido["fuente"] = noticia["fuente"]
+    # guardamos url solo para uso interno, no aparece en posteos
+    contenido["_referencia"] = noticia["url"]
 
     return contenido
 
